@@ -85,11 +85,6 @@ public class FeaturedProductsSteps {
             .flatMap(category -> ItemGenerator.getItemsByCategory(category.getName()).stream())
             .map(Item::name)
             .toList();
-
-    System.out.println(categories.stream().toList());
-    System.out.println(itemsByCategory);
-    System.out.println(SearchResultsPage.getSearchItemsName());
-
     assertThat(
         "All items for " + term + " should be visible!",
         itemsByCategory.containsAll(SearchResultsPage.getSearchItemsName()));
