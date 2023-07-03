@@ -1,37 +1,37 @@
-# Testy automatyczne dla testowej aplikacji webowej [skleptest.pl](https://skleptest.pl/)
+# Automated Testing for a Test Web Application [skleptest.pl](https://skleptest.pl/)
 
 ## Framework
 
-- projekt *Maven*
-- jezyk programowania *Java*
-- biblioteki *Selenide*, aby odwoływać się do elementów DOM aplikacji
-- wzorzec *PageObject* do organizacji klas i metod
-- framework *Cucumber* opraty na metodologii BDD
-- framework *JUnit* wykorzystano głównie do raportowania i monitorowania testów na Jenkins
+- Maven project
+- Java programming language
+- Selenide libraries for interacting with the application's DOM elements
+- PageObject pattern for organizing classes and methods
+- Cucumber framework based on BDD methodology
+- JUnit framework mainly used for reporting and monitoring tests on Jenkins
 
-Dodatkowo:
-Konfiguracja środowiska testowego uruchamia na Jenkins dodatkowy kontener *Selenoid* (konfiguracja w pliku *selenoid.yml* i *browsers.json*). Jest to Hub zarządzający dostępem do WebDriver przeglądarek (chrome, opera, firefox).
+Additionally:
+The test environment configuration launches an additional Selenoid container on Jenkins (configuration in the selenoid.yml and browsers.json files). It acts as a hub managing access to WebDriver for browsers (Chrome, Opera, Firefox).
 
-## Konfiguracja
+## Configuration
 
-- w pliku `config.properties` znajdują się domyślne ustawienia parametrów na których uruchamiane są testy
-- można zmienić parametry wywołania albo zmieniając wpisy w pliku powyżej, albo uruchamiając testy lub test z konsoli
+- The config.properties file contains default settings for the test execution parameters.
+-  can change the invocation parameters by modifying the entries in the above file or by running tests or a specific test from the console.
 
 ```sh
 mvn -Durl=[https://adres] -DremoteUrl=[http://hub selenoid] -Dbrowser=[nazwa] -DbrowserVersion=[numer wersji] clean test
 ```
 
-## Debugowanie
+## Debugging
 
-- Domyśla konfiguracja uruchamia testy na adresie <https://skleptest.pl/> na przeglądarce Chrome i WebDriver lokalnej maszyny na której uruchomiono testy
+- The default configuration runs tests on the address <https://skleptest.pl/>  using the Chrome browser and the local machine's WebDriver where the tests are executed.
 
 
-## Zasady i pluginy
+## Rules and Plugins
 
-- testy są niezależne od siebie
-- pluginy dla Cucumber
+- The tests are independent of each other.
+- Plugins for Cucumber.
 
-| Plugin                     |
+| Plugins                     |
 | -------------------------- |
 | Cucumber +                 |
 | Cucumber for Java          |
