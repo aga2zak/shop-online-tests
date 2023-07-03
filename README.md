@@ -1,4 +1,4 @@
-# Testy automatyczne dla aplikacji webowej WebX
+# Testy automatyczne dla testowej aplikacji webowej [skleptest.pl](https://skleptest.pl/)
 
 ## Framework
 
